@@ -1,0 +1,99 @@
+@charset "UTF-8";
+/*!
+Auteur: Stephanie Dang
+*/
+/*--------------------------------------------------------------
+>>> LISTE DES FICHIERS SCSS IMPORTÉS 
+----------------------------------------------------------------
+# Variables
+# Horaire
+
+----------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+/* ------------------------------------------------------------
+# Mixin
+--------------------------------------------------------------*/
+* {
+  font-family: 'Nunito',sans-serif;
+}
+
+body {
+  width: 75vw;
+  margin: 0 auto;
+  background: #dbdbf3;
+}
+
+header {
+  text-align: center;
+  text-transform: uppercase;
+  color: #34349b;
+}
+
+#colonneHeure {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 12;
+  grid-row: 1/13;
+}
+
+.day {
+  color: #8f8fda;
+}
+
+#horaire {
+  display: -ms-grid;
+  display: grid;
+  border: 4px dashed white;
+  -ms-grid-rows: 1fr (50px)[11];
+  -ms-grid-columns: 0.5fr (1fr)[5];
+      grid-template: 1fr repeat(11, 50px)/0.5fr repeat(5, 1fr);
+}
+
+#horaire #projet1 {
+  background: #ffa7b6;
+  -ms-grid-row: 8;
+  -ms-grid-row-span: 6;
+  -ms-grid-column: 2;
+  grid-area: 8/2/14/2;
+}
+
+#horaire #progVeille1 {
+  background: #f7f783;
+  -ms-grid-row: 9;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 3;
+  grid-area: 9/3/14/3;
+}
+
+#horaire #video1 {
+  background: #a8ffff;
+  -ms-grid-row: 8;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 4;
+  grid-area: 8/4/11/4;
+}
+
+#horaire #projet2 {
+  background: #ffa7b6;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 5;
+  grid-area: 3/5/7/5;
+}
+
+#horaire #progVeille2 {
+  background: #f7f783;
+  -ms-grid-row: 9;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 5;
+  grid-area: 9/5/14/5;
+}
+
+#horaire #video2 {
+  background: #a8ffff;
+  -ms-grid-row: 8;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 6;
+  grid-area: 8/6/11/6;
+}
+/*# sourceMappingURL=style.css.map */

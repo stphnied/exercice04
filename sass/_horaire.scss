@@ -1,0 +1,64 @@
+*{
+  font-family: 'Nunito',sans-serif;
+
+}
+
+body {
+    width: 75vw;
+    margin: 0 auto;
+    background:$color_purple;
+}
+
+header {
+     text-align: center;
+     text-transform: uppercase;
+     color: darken($color_purple,50%);
+    }
+
+#colonneHeure {
+    grid-row : 1/13;
+    // background: rgb(201, 201, 201);
+}
+
+.day {
+   color: darken($color_purple, 20%);
+}
+
+#horaire {
+    display: grid;
+        // background: rgb(201, 201, 201);
+        border: 4px dashed white;
+    // Grid-template : grid-temp-row / grid-temp-columns
+    grid-template: 1fr repeat(11,50px)/ 0.5fr repeat(5,1fr);
+
+    // COURS
+    #projet1 {
+        background: $color_pink;
+        // grid area : grid-row-start / grid-column-start / grid-row-end/ grid-column-end;
+        grid-area: 8/2/14/2;
+    }
+    #progVeille1 {
+        background: $color_yellow;
+        grid-area: 9/3/14/3;
+    }
+
+    #video1 {
+        background: $color_cyan;
+        grid-area: 8/4/11/4;
+    }
+
+    #projet2 {
+        background: $color_pink;
+        grid-area: 3/5/7/5;
+    }
+
+    #progVeille2 {
+        background: $color_yellow;
+        grid-area: 9/5/14/5;
+    }
+
+    #video2 {
+        background: $color_cyan;
+        grid-area: 8/6/11/6;
+    }
+}
