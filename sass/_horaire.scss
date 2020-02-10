@@ -4,7 +4,7 @@
 }
 
 body {
-    width: 75vw;
+    width: 100vw;
     margin: 0 auto;
     background:$color_purple;
 }
@@ -13,52 +13,136 @@ header {
      text-align: center;
      text-transform: uppercase;
      color: darken($color_purple,50%);
+     h1,h2,h3{
+        font-size: 0.75rem;
+    }
     }
 
-#colonneHeure {
-    grid-row : 1/13;
-    // background: rgb(201, 201, 201);
-}
-
-.day {
+.day,.heures {
    color: darken($color_purple, 20%);
 }
 
-#horaire {
-    display: grid;
-        // background: rgb(201, 201, 201);
-        border: 4px dashed white;
-    // Grid-template : grid-temp-row / grid-temp-columns
-    grid-template: 1fr repeat(11,50px)/ 0.5fr repeat(5,1fr);
 
+#horaire {
+    margin: 0 auto;
+    // max-width: 75vw;
+    display: grid;
+    height: 70vh;
+    font-size: 0.7rem;
+    border: 4px dashed white;
+    // Grid-template : grid-temp-row / grid-temp-columns
+    grid-template-rows: 1fr 11fr;
+    grid-template-columns: 30px 5fr;
+    grid-template-areas: " . days"
+                         " heures courses";
+    grid-gap: 0px;
+
+    .days {
+        display: grid;
+        grid-area: days;
+        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: 1fr;
+        .day{
+            // text-align: center;
+            font-size: 0.5rem;
+            &:hover {
+                color: darken($color_purple,50%);
+            }
+        }
+    }
+
+    .heures {
+        display: grid;
+        grid-area: heures;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(10,1fr);
+    }
+
+    .courses {
+        display: grid;
+        grid-area: courses;
+        grid-template-columns: repeat(5,1fr);
+    }
+     .course {
+         border-radius: 5px;
+         text-transform: uppercase;
+         writing-mode: vertical-rl;
+         transform: rotate(-180deg);
+         text-align: center;
+     }
     // COURS
     #projet1 {
         background: $color_pink;
         // grid area : grid-row-start / grid-column-start / grid-row-end/ grid-column-end;
-        grid-area: 8/2/14/2;
+        grid-area: 6/1/11/1;
+        color: darken($color_pink,50%);
     }
     #progVeille1 {
         background: $color_yellow;
-        grid-area: 9/3/14/3;
+        grid-area: 7/2/11/2;
+        color: darken($color_yellow,50%);
     }
 
     #video1 {
         background: $color_cyan;
-        grid-area: 8/4/11/4;
+        grid-area: 6/3/9/3;
+        color: darken($color_cyan,50%);
     }
 
     #projet2 {
         background: $color_pink;
-        grid-area: 3/5/7/5;
+        grid-area: 1/4/6/4;
+        color: darken($color_pink,50%);
     }
 
     #progVeille2 {
         background: $color_yellow;
-        grid-area: 9/5/14/5;
+        grid-area: 7/4/11/4;
+        color: darken($color_yellow,50%);
     }
 
     #video2 {
         background: $color_cyan;
-        grid-area: 8/6/11/6;
+        grid-area: 7/5/10/5;
+        color: darken($color_cyan,50%);
+    }
+}
+
+// Desktop
+@media screen and (min-width:767px) {
+
+    header {
+        h1,h2,h3{
+            font-size: 1rem;
+        }
+    }
+
+    #horaire {
+        font-size: 1rem;
+        margin: 25px 25px;
+    }
+
+    .day {
+        // width: 75%;
+        h2 {
+            font-size: 1.25rem;
+        }
+    }
+        
+    .course {
+        p{
+           margin: auto 50px;
+       }
+    }
+}
+
+@media screen and (min-width:992px) {
+
+    header {
+        font-size: 2rem;
+    }
+
+    #horaire {
+        margin: 100px 100px;
     }
 }

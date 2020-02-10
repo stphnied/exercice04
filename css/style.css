@@ -19,7 +19,7 @@ Auteur: Stephanie Dang
 }
 
 body {
-  width: 75vw;
+  width: 100vw;
   margin: 0 auto;
   background: #dbdbf3;
 }
@@ -30,70 +30,158 @@ header {
   color: #34349b;
 }
 
-#colonneHeure {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 12;
-  grid-row: 1/13;
+header h1, header h2, header h3 {
+  font-size: 0.75rem;
 }
 
-.day {
+.day, .heures {
   color: #8f8fda;
 }
 
 #horaire {
+  margin: 0 auto;
   display: -ms-grid;
   display: grid;
+  height: 70vh;
+  font-size: 0.7rem;
   border: 4px dashed white;
-  -ms-grid-rows: 1fr (50px)[11];
-  -ms-grid-columns: 0.5fr (1fr)[5];
-      grid-template: 1fr repeat(11, 50px)/0.5fr repeat(5, 1fr);
+  -ms-grid-rows: 1fr 11fr;
+      grid-template-rows: 1fr 11fr;
+  -ms-grid-columns: 30px 5fr;
+      grid-template-columns: 30px 5fr;
+      grid-template-areas: " . days" " heures courses";
+  grid-gap: 0px;
+}
+
+#horaire .days {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: days;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+#horaire .days .day {
+  font-size: 0.5rem;
+}
+
+#horaire .days .day:hover {
+  color: #34349b;
+}
+
+#horaire .heures {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: heures;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: (1fr)[10];
+      grid-template-rows: repeat(10, 1fr);
+}
+
+#horaire .courses {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: courses;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+}
+
+#horaire .course {
+  border-radius: 5px;
+  text-transform: uppercase;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  text-align: center;
 }
 
 #horaire #projet1 {
   background: #ffa7b6;
-  -ms-grid-row: 8;
-  -ms-grid-row-span: 6;
-  -ms-grid-column: 2;
-  grid-area: 8/2/14/2;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 1;
+  grid-area: 6/1/11/1;
+  color: #a7001c;
 }
 
 #horaire #progVeille1 {
   background: #f7f783;
-  -ms-grid-row: 9;
-  -ms-grid-row-span: 5;
-  -ms-grid-column: 3;
-  grid-area: 9/3/14/3;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 2;
+  grid-area: 7/2/11/2;
+  color: #747407;
 }
 
 #horaire #video1 {
   background: #a8ffff;
-  -ms-grid-row: 8;
+  -ms-grid-row: 6;
   -ms-grid-row-span: 3;
-  -ms-grid-column: 4;
-  grid-area: 8/4/11/4;
+  -ms-grid-column: 3;
+  grid-area: 6/3/9/3;
+  color: #00a8a8;
 }
 
 #horaire #projet2 {
   background: #ffa7b6;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 4;
-  -ms-grid-column: 5;
-  grid-area: 3/5/7/5;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 4;
+  grid-area: 1/4/6/4;
+  color: #a7001c;
 }
 
 #horaire #progVeille2 {
   background: #f7f783;
-  -ms-grid-row: 9;
-  -ms-grid-row-span: 5;
-  -ms-grid-column: 5;
-  grid-area: 9/5/14/5;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 4;
+  grid-area: 7/4/11/4;
+  color: #747407;
 }
 
 #horaire #video2 {
   background: #a8ffff;
-  -ms-grid-row: 8;
+  -ms-grid-row: 7;
   -ms-grid-row-span: 3;
-  -ms-grid-column: 6;
-  grid-area: 8/6/11/6;
+  -ms-grid-column: 5;
+  grid-area: 7/5/10/5;
+  color: #00a8a8;
+}
+
+@media screen and (min-width: 767px) {
+  header h1, header h2, header h3 {
+    font-size: 1rem;
+  }
+  #horaire {
+    font-size: 1rem;
+    margin: 25px 25px;
+  }
+  .day h2 {
+    font-size: 1.25rem;
+  }
+  .course p {
+    margin: auto 50px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  header {
+    font-size: 2rem;
+  }
+  #horaire {
+    margin: 100px 100px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
